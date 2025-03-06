@@ -15,7 +15,7 @@ interface CardProps {
   };
 }
 
-export default function Card({ id, name, images, day_pass_price, day_pass_discounts_percentage }: CardProps) {
+export default function Card({ name, images, day_pass_price, day_pass_discounts_percentage }: CardProps) {
   return (
     <div className="rounded-lg overflow-hidden shadow-lg">
       <Image
@@ -34,7 +34,7 @@ export default function Card({ id, name, images, day_pass_price, day_pass_discou
           </button>
           <button className="flex-1 border-2 border-[var(--primary2)] text-black py-2 px-4 rounded-md hover:bg-[var(--primary2)]/10 transition-colors">
             <span className="block text-sm">Bulk Pass</span>
-            <span className="block font-bold">20% Off</span>
+            <span className="block font-bold">{day_pass_discounts_percentage[10].value}% Off</span>
           </button>
         </div>
       </div>
