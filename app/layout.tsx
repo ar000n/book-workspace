@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Image from "next/image";
+import { CenterProvider } from '@/context/centerContext';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,15 +21,37 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <header className="fixed top-0 left-0 right-0 h-[90px] flex justify-between items-center px-6 border-b border-gray-200 bg-white z-50">
+          <Image 
+            src="/title.png" 
+            alt="Title"
+            width={140}
+            height={40}
+            priority
+          />
+          <Image 
+            src="/call.svg" 
+            alt="Call"
+            width={24}
+            height={24}
+          />
+        </header>
+        <main className="overflow-y-auto pt-[90px]">
+          <CenterProvider>
+            {children}
+          </CenterProvider>
+          <footer className="h-[44px] bg-[#222E34] text-white flex items-center justify-center">
+            <p>© Copyright 2024. Bhive Private Limited</p>
+          </footer>
+        </main>
       </body>
     </html>
   );
