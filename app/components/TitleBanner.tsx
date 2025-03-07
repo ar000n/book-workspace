@@ -18,7 +18,7 @@ export default function TitleBanner() {
           className="md:w-[70%] h-[45  0px] bg-cover bg-center bg-no-repeat relative flex items-center pl-5 md:pl-25" 
           style={{ backgroundImage: 'url("/bgImage.png")' }}
         >
-            <h1 className="text-xl md:text-5xl lg:text-6xl font-bold px-5 max-w-[650px]">
+            <h1 className="text-xl md:text-5xl lg:text-6xl font-bold max-w-[650px]">
               Host your meeting with world-class amenities. Starting at <span className="text-[var(--primary2)]">₹199/-!</span>
             </h1>
         </div>
