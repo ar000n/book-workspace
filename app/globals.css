@@ -5,6 +5,7 @@
   --foreground: #171717;
   --primary-text: #263238;
   --primary2: #ffbb00;
+  --light-yellow: #FFCF4B;
 }
 
 @theme inline {
@@ -40,6 +41,13 @@ body {
   font-size: 36px;
   line-height: 45px;
   letter-spacing: 0.3px;  
+  /* color: var(--primary-text); */
+}
+.heading4 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0px;
   color: var(--primary-text);
 }
 .heading5 {

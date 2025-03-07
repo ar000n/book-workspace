@@ -29,26 +29,28 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header className="fixed top-0 left-0 right-0 h-[90px] flex justify-between items-center px-6 border-b border-gray-200 bg-white z-50">
+        <header className="fixed top-0 left-0 right-0 h-[90px] flex justify-between items-center px-25 bg-white z-50 border-b border-[#F2B304]">
           <Image 
-            src="/title.png" 
+            src="/title.svg" 
             alt="Title"
             width={140}
             height={40}
             priority
           />
-          <Image 
-            src="/call.svg" 
-            alt="Call"
-            width={24}
-            height={24}
-          />
+          <a href="tel:+919876543210" className="p-2 border border-[#F2B304] rounded-md hover:bg-[#F2B304]/10 transition-colors">
+            <Image 
+              src="/call.svg" 
+              alt="Call"
+              width={24}
+              height={24}
+            />
+          </a>
         </header>
         <main className="overflow-y-auto pt-[90px]">
           <CenterProvider>
             {children}
           </CenterProvider>
-          <footer className="h-[44px] bg-[#222E34] text-white flex items-center justify-center">
+          <footer className="h-[44px] bg-[#222E34] text-sm text-white flex items-center justify-center">
             <p>© Copyright 2024. Bhive Private Limited</p>
           </footer>
         </main>

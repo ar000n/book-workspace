@@ -45,23 +45,36 @@ const amenitiesList = [
 
 export default function Amenities() {
   return (
-    <div className="py-16 px-12 bg-gray-50">
-      <h2 className="heading2 mb-12">Why Choose us?</h2>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+    <div className="py-16 px-25 bg-gray-50">
+      <h2 className="heading2 text-[var(--primary-text)] mb-12">Why Choose us?</h2>
+      <div className="grid grid-cols-2 px-5 md:grid-cols-4">
         {amenitiesList.map((amenity, index) => (
-          <div key={index} className="flex flex-col text-center group relative">
-            <div className="flex items-center gap-2 mb-2">
+          <div 
+            key={index} 
+            className={`flex group hover:bg-white hover:shadow-lg p-3 hover:rounded transition-all duration-300
+              ${index % 2 !== 1 ? 'border-r border-gray-200' : ''} 
+              ${index < amenitiesList.length - 4 ? 'border-b border-gray-200' : ''}
+              md:border-r md:border-gray-200 md:last:border-r-0
+              md:nth-4:border-r-0
+              ${index < amenitiesList.length - 4 ? 'md:border-b' : ''}
+            `}
+          >
+            <div className="p-2">
               <Image 
                 src={amenity.icon} 
                 alt={amenity.title} 
                 width={24} 
                 height={24} 
               />
-              <h5 className="heading5">{amenity.title}</h5>
             </div>
-            <p className="text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute top-full left-0 right-0 bg-white p-2 shadow-lg rounded-md">
+            <div className="flex flex-col pt-3">
+              <h5 className="heading5 group-hover:font-bold group-hover:-translate-y-2 transition-all duration-300">
+                {amenity.title}
+              </h5>
+            <p className="text-sm text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white">
               {amenity.description}
             </p>
+            </div>
           </div>
         ))}
       </div>
